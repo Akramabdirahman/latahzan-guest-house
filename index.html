@@ -18,6 +18,123 @@
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/jpeg" href="/images/Favicon.jpeg" />
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much is a room per night at Latahzan Guest House?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Room rates at Latahzan Guest House vary by room type and season. Contact us directly for the latest pricing and availability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer family or executive suites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer Deluxe Rooms, Executive Suites, and Family Rooms to accommodate different needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Latahzan Guest House located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Latahzan Guest House is located on Al-Huda Street, near Baraza Park, Moyale, Kenya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I make a reservation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Guests can book via Booking.com, Expedia, or directly through WhatsApp for a personalized experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What amenities are included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free Wi-Fi, private bathrooms, hot showers, secure parking, curated dining, and event hosting options."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Hotel Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Latahzan Guest House",
+    "description": "Latahzan Guest House offers refined stays, curated experiences, and attentive service in Moyale. Elegant rooms, suites, and family accommodations with premium amenities.",
+    "url": "https://latahzanguesthouse.com/",
+    "telephone": "+254743539690",
+    "email": "latahzanguesthouse@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Al-Huda Street, near Baraza Park",
+      "addressLocality": "Moyale",
+      "addressRegion": "Marsabit County",
+      "addressCountry": "KE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -3.5200,
+      "longitude": 39.0600
+    },
+    "image": [
+      "https://latahzanguesthouse.com/images/front%20view.jpg",
+      "https://latahzanguesthouse.com/images/IMG-20231129-WA0007.jpg",
+      "https://latahzanguesthouse.com/images/IMG-20231129-WA0008.jpg"
+    ],
+    "priceRange": "KES 3000–7000",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4",
+      "bestRating": "5"
+    },
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification","name":"Free Wi-Fi","value":true},
+      {"@type": "LocationFeatureSpecification","name":"Private Bathrooms","value":true},
+      {"@type": "LocationFeatureSpecification","name":"Hot Showers","value":true},
+      {"@type": "LocationFeatureSpecification","name":"Secure Parking","value":true},
+      {"@type": "LocationFeatureSpecification","name":"Restaurant","value":true},
+      {"@type": "LocationFeatureSpecification","name":"Event Hosting","value":true}
+    ],
+    "checkinTime": "12:00",
+    "checkoutTime": "10:00",
+    "containsPlace": [
+      {
+        "@type": "HotelRoom",
+        "name": "Deluxe Room",
+        "description": "Spacious room with modern amenities, calm interiors, and premium bedding for restful nights.",
+        "occupancy": {"@type":"QuantitativeValue","minValue":1,"maxValue":2}
+      },
+      {
+        "@type": "HotelRoom",
+        "name": "Executive Suite",
+        "description": "Elegantly designed suite with dedicated work area, seating, and luxurious comfort for longer stays.",
+        "occupancy": {"@type":"QuantitativeValue","minValue":1,"maxValue":3}
+      },
+      {
+        "@type": "HotelRoom",
+        "name": "Family Room",
+        "description": "Comfortable and well-appointed space for families, with multiple beds and secure surroundings.",
+        "occupancy": {"@type":"QuantitativeValue","minValue":2,"maxValue":5}
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -43,7 +160,7 @@
   </div>
 </header>
 
-<!-- BOOK DIRECT / PREMIUM CTA -->
+<!-- Book Direct Section -->
 <section class="book-direct" style="text-align:center; padding:2em 1em;">
   <h2>Reserve Direct for a Personalized Experience</h2>
   <p>Book directly for priority room selection, flexible check-in, and personalized service.</p>
@@ -54,19 +171,16 @@
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- About -->
 <section id="about" style="padding:3em 1em; max-width:900px; margin:auto;">
   <h2>About Latahzan Guest House</h2>
   <p>
     Latahzan Guest House is a premium retreat in Moyale, offering a combination of calm, privacy, and thoughtful service. 
     Designed for discerning travelers, our property delivers a memorable stay with attention to every detail, ensuring both comfort and security.
   </p>
-  <p>
-    Guests can relax in elegantly maintained rooms, enjoy curated dining experiences, and explore Moyale through carefully selected local attractions.
-  </p>
 </section>
 
-<!-- ROOMS & SUITES -->
+<!-- Rooms & Suites -->
 <section id="rooms" style="padding:3em 1em; background:#f9f9f9;">
   <h2>Rooms & Suites</h2>
   <div class="services">
@@ -85,7 +199,7 @@
   </div>
 </section>
 
-<!-- EXPERIENCES / LOCAL ATTRACTIONS -->
+<!-- Experiences -->
 <section id="experiences" style="padding:3em 1em;">
   <h2>Curated Experiences in Moyale</h2>
   <ul style="list-style-type:disc; margin-left:2em;">
@@ -97,7 +211,7 @@
   <p>Our team can help craft a personalized itinerary that blends comfort, discovery, and cultural immersion.</p>
 </section>
 
-<!-- GALLERY -->
+<!-- Gallery -->
 <section id="gallery" style="padding:3em 1em; background:#f9f9f9;">
   <h2>Gallery</h2>
   <p>A glimpse into the spaces, comfort, and experiences that define a stay at Latahzan Guest House.</p>
@@ -109,7 +223,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- Testimonials -->
 <section id="testimonials" style="padding:3em 1em;">
   <h2>Guest Experiences</h2>
   <div class="testimonials">
@@ -128,7 +242,7 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- Contact -->
 <section id="contact" style="padding:3em 1em; max-width:900px; margin:auto;">
   <h2>Reservations & Enquiries</h2>
   <p>We would be delighted to welcome you. Contact us for reservations, personalized stays, or any inquiries.</p>
@@ -144,22 +258,6 @@
     style="border:0; margin-top:1em;"
     loading="lazy">
   </iframe>
-</section>
-
-<!-- HIDDEN AI-ANSWER SNIPPETS FOR AEO -->
-<section style="display:none;">
-  <h2>Frequently Asked Guest Questions</h2>
-  <p><strong>What makes Latahzan Guest House special?</strong><br>
-  It offers a combination of calm, security, attentive service, and curated experiences designed for discerning travelers.</p>
-
-  <p><strong>What types of rooms are available?</strong><br>
-  Deluxe rooms, Executive suites, and Family rooms — each designed for comfort, privacy, and premium service.</p>
-
-  <p><strong>Are there local experiences available?</strong><br>
-  Guests can enjoy guided cultural visits, nature walks, and curated culinary experiences in Moyale.</p>
-
-  <p><strong>How can guests make a reservation?</strong><br>
-  Reservations can be made via Booking.com, Expedia, or directly through WhatsApp for a personalized experience.</p>
 </section>
 
 <footer style="text-align:center; padding:2em 1em;">
