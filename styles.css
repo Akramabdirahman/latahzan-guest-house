@@ -447,21 +447,25 @@ h1{
 }
 
 
-/* === NAVBAR LOGO HARD OVERRIDE (FINAL FIX) === */
-.site-header img.nav-logo{
-  max-width: 42px !important;
-  max-height: 42px !important;
+/* ===== NAVBAR LOGO (FORCE FIX) ===== */
+header.site-header a.brand > img.nav-logo{
   width: 42px !important;
   height: 42px !important;
-  object-fit: contain !important;
+  max-width: 42px !important;
+  max-height: 42px !important;
+
+  object-fit: cover !important;
   border-radius: 50% !important;
+
   background: #fff !important;
   padding: 4px !important;
-  flex-shrink: 0 !important;
-  display: inline-block !important;
+
+  display: block !important;
+  flex: 0 0 auto !important;
 }
 
-.site-header .header-row{
+/* Keep header clean */
+header.site-header .header-row{
   min-height: 64px;
   align-items: center;
 }
