@@ -398,3 +398,36 @@ h1{
   .nav{display:none}
   .sticky-book{display:block}
 }
+
+/* ===== NAV LOGO FIX (prevents huge header) ===== */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width: 0;
+}
+
+.nav-logo{
+  height:42px;          /* perfect size */
+  width:42px;           /* force square */
+  object-fit:cover;     /* crop correctly */
+  border-radius:50%;
+  background:#fff;
+  padding:4px;
+  flex:0 0 auto;        /* never stretch */
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+}
+
+/* Keep the header height clean */
+.site-header .header-row{
+  padding:12px 0;       /* slightly tighter */
+}
+
+/* Make brand text not wrap into 3 lines */
+.brand-name{
+  font-weight:900;
+  white-space:nowrap;   /* stops breaking into lines */
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:220px;
+}
