@@ -443,3 +443,33 @@ h1{
   text-overflow:ellipsis;
   max-width:220px;
 }
+
+
+/* ==== FORCE NAV LOGO SIZE (override everything) ==== */
+.site-header .brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-width: 0;
+}
+
+.site-header .brand img.nav-logo {
+  height: 42px !important;
+  width: 42px !important;
+  max-height: 42px !important;
+  max-width: 42px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  padding: 4px !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35) !important;
+}
+
+.site-header .brand-name {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 220px !important;
+}
