@@ -1,268 +1,296 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+:root{
+  --bg1:#061010;
+  --bg2:#070b0c;
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.72);
+  --border:rgba(255,255,255,.14);
+  --card:rgba(255,255,255,.06);
+  --shadow:0 18px 50px rgba(0,0,0,.35);
 
-  <title>Latahzan Guest House | Refined Stays & Experiences in Moyale</title>
+  --brand:#0b2f2a;
+  --accent:#d6b15e;
+  --wa:#27c26a;
 
-  <meta name="description" content="Latahzan Guest House offers premium accommodation, curated experiences, and a calm, secure environment in Moyale. Ideal for discerning travelers seeking comfort and memorable stays." />
-  <meta name="author" content="Latahzan Guest House" />
+  --radius:22px;
+  --radius2:28px;
+  --max:1160px;
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Latahzan Guest House | Refined Stays & Experiences in Moyale" />
-  <meta property="og:description" content="A private retreat offering elevated comfort, curated experiences, and thoughtful service in Moyale." />
-  <meta property="og:image" content="https://latahzanguesthouse.com/images/front%20view.jpg" />
-  <meta property="og:url" content="https://latahzanguesthouse.com/" />
-  <meta property="og:type" content="website" />
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
 
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/jpeg" href="/images/Favicon.jpeg" />
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(214,177,94,.22), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(39,194,106,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
 
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much is a room per night at Latahzan Guest House?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Room rates at Latahzan Guest House vary by room type and season. Contact us directly for the latest pricing and availability."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer family or executive suites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. We offer Deluxe Rooms, Executive Suites, and Family Rooms to accommodate different needs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where is Latahzan Guest House located?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Latahzan Guest House is located on Al-Huda Street, near Baraza Park, Moyale, Kenya."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I make a reservation?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Guests can book via Booking.com, Expedia, or directly through WhatsApp for a personalized experience."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What amenities are included?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Free Wi-Fi, private bathrooms, hot showers, secure parking, curated dining, and event hosting options."
-        }
-      }
-    ]
-  }
-  </script>
+.container{max-width:var(--max); margin:0 auto; padding:0 18px}
 
-  <!-- Hotel Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Hotel",
-    "name": "Latahzan Guest House",
-    "description": "Latahzan Guest House offers refined stays, curated experiences, and attentive service in Moyale. Elegant rooms, suites, and family accommodations with premium amenities.",
-    "url": "https://latahzanguesthouse.com/",
-    "telephone": "+254743539690",
-    "email": "latahzanguesthouse@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Al-Huda Street, near Baraza Park",
-      "addressLocality": "Moyale",
-      "addressRegion": "Marsabit County",
-      "addressCountry": "KE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -3.5200,
-      "longitude": 39.0600
-    },
-    "image": [
-      "https://latahzanguesthouse.com/images/front%20view.jpg",
-      "https://latahzanguesthouse.com/images/IMG-20231129-WA0007.jpg",
-      "https://latahzanguesthouse.com/images/IMG-20231129-WA0008.jpg"
-    ],
-    "priceRange": "KES 3000–7000",
-    "starRating": {
-      "@type": "Rating",
-      "ratingValue": "4",
-      "bestRating": "5"
-    },
-    "amenityFeature": [
-      {"@type": "LocationFeatureSpecification","name":"Free Wi-Fi","value":true},
-      {"@type": "LocationFeatureSpecification","name":"Private Bathrooms","value":true},
-      {"@type": "LocationFeatureSpecification","name":"Hot Showers","value":true},
-      {"@type": "LocationFeatureSpecification","name":"Secure Parking","value":true},
-      {"@type": "LocationFeatureSpecification","name":"Restaurant","value":true},
-      {"@type": "LocationFeatureSpecification","name":"Event Hosting","value":true}
-    ],
-    "checkinTime": "12:00",
-    "checkoutTime": "10:00",
-    "containsPlace": [
-      {
-        "@type": "HotelRoom",
-        "name": "Deluxe Room",
-        "description": "Spacious room with modern amenities, calm interiors, and premium bedding for restful nights.",
-        "occupancy": {"@type":"QuantitativeValue","minValue":1,"maxValue":2}
-      },
-      {
-        "@type": "HotelRoom",
-        "name": "Executive Suite",
-        "description": "Elegantly designed suite with dedicated work area, seating, and luxurious comfort for longer stays.",
-        "occupancy": {"@type":"QuantitativeValue","minValue":1,"maxValue":3}
-      },
-      {
-        "@type": "HotelRoom",
-        "name": "Family Room",
-        "description": "Comfortable and well-appointed space for families, with multiple beds and secure surroundings.",
-        "occupancy": {"@type":"QuantitativeValue","minValue":2,"maxValue":5}
-      }
-    ]
-  }
-  </script>
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  cursor:pointer;
+  transition:.2s ease;
+  font-weight:750;
+}
+.btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.09)}
+.btn.primary{
+  background:linear-gradient(180deg, var(--accent), #b98e37);
+  border-color:transparent;
+  color:#12100a;
+}
+.btn.wa{
+  background:linear-gradient(180deg, var(--wa), #1da85a);
+  border-color:transparent;
+  color:#04150c;
+}
 
-</head>
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
+  color:var(--muted);
+  font-weight:750;
+  font-size:13px;
+}
 
-<body>
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(180deg, rgba(7,12,12,.75) 0%, rgba(7,12,12,.35) 100%);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.header-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:14px 0;
+}
+.brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
+.brand-mark{
+  width:38px; height:38px; border-radius:12px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(214,177,94,.85), transparent 55%),
+    linear-gradient(180deg, rgba(11,47,42,.95), rgba(11,47,42,.65));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow: var(--shadow);
+}
+.brand-name{white-space:nowrap}
 
-<nav>
-  <a href="#home" class="active">Home</a>
-  <a href="#about">About</a>
-  <a href="#rooms">Rooms & Suites</a>
-  <a href="#experiences">Experiences</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-</nav>
+.nav{display:flex; gap:16px; align-items:center}
+.nav a{color:var(--muted); font-weight:750; font-size:14px}
+.nav a:hover{color:var(--text)}
+.header-cta{display:flex; gap:10px}
 
-<header id="home">
-  <div class="hero">
-    <img src="images/front view.jpg" alt="Latahzan Guest House exterior" />
-    <div class="overlay"></div>
-    <div class="hero-text">
-      <h1>Latahzan Guest House</h1>
-      <p>Refined Stays & Curated Experiences in Moyale</p>
-      <a href="#contact" class="btn-primary">Book Your Stay</a>
-    </div>
-  </div>
-</header>
+/* Hero */
+.hero{padding:44px 0 26px}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 26px;
+  align-items:stretch;
+}
+.hero-card{
+  position:relative;
+  border-radius: var(--radius2);
+  border:1px solid rgba(255,255,255,.12);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  min-height: 460px;
+}
+.hero-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute; inset:0;
+}
+.hero-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(6,10,10,.82) 0%, rgba(6,10,10,.58) 45%, rgba(6,10,10,.22) 100%);
+}
+.hero-content{
+  position:relative; z-index:2;
+  padding: 34px;
+  max-width: 680px;
+}
+h1{
+  margin:12px 0 10px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height:1.06;
+  letter-spacing:-.7px;
+}
+.lead{color:var(--muted); font-size:16px; line-height:1.55; max-width: 56ch}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px}
+.trust-mini{margin-top:18px; display:flex; flex-wrap:wrap; gap:12px}
 
-<!-- Book Direct Section -->
-<section class="book-direct" style="text-align:center; padding:2em 1em;">
-  <h2>Reserve Direct for a Personalized Experience</h2>
-  <p>Book directly for priority room selection, flexible check-in, and personalized service.</p>
-  <div style="margin-top:1em;">
-    <a href="https://www.booking.com/" target="_blank" class="btn-outline">Booking.com</a>
-    <a href="https://www.expedia.com/" target="_blank" class="btn-outline">Expedia</a>
-    <a href="https://wa.me/254743539690" class="btn-primary">Reserve via WhatsApp</a>
-  </div>
-</section>
+/* Booking card */
+.booking-card{
+  border-radius: var(--radius2);
+  border:1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+.booking-title{margin:0 0 8px; font-size:18px; letter-spacing:-.2px}
+.muted{color:var(--muted)}
+.tiny{font-size:12px; line-height:1.4}
 
-<!-- About -->
-<section id="about" style="padding:3em 1em; max-width:900px; margin:auto;">
-  <h2>About Latahzan Guest House</h2>
-  <p>
-    Latahzan Guest House is a premium retreat in Moyale, offering a combination of calm, privacy, and thoughtful service. 
-    Designed for discerning travelers, our property delivers a memorable stay with attention to every detail, ensuring both comfort and security.
-  </p>
-</section>
+.form{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top:14px;
+}
+.field label{display:block; font-size:12px; color:var(--muted); margin:0 0 6px; font-weight:800}
+.field input, .field select, .field textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius: 14px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.24);
+  color: var(--text);
+  outline:none;
+}
+.field textarea{min-height:92px; resize:vertical}
+.full{grid-column:1/-1}
+.actions{display:flex; gap:10px; flex-wrap:wrap}
 
-<!-- Rooms & Suites -->
-<section id="rooms" style="padding:3em 1em; background:#f9f9f9;">
-  <h2>Rooms & Suites</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Deluxe Room</h3>
-      <p>Spacious room with modern amenities, calm interiors, and premium bedding for restful nights.</p>
-    </div>
-    <div class="card">
-      <h3>Executive Suite</h3>
-      <p>Elegantly designed suite with dedicated work area, seating, and luxurious comfort for longer stays.</p>
-    </div>
-    <div class="card">
-      <h3>Family Room</h3>
-      <p>Comfortable and well-appointed space for families, with multiple beds and secure surroundings.</p>
-    </div>
-  </div>
-</section>
+/* Trust strip */
+.trust-strip{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.trust-item{
+  padding: 12px 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  border-radius: 16px;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+  text-align:center;
+}
 
-<!-- Experiences -->
-<section id="experiences" style="padding:3em 1em;">
-  <h2>Curated Experiences in Moyale</h2>
-  <ul style="list-style-type:disc; margin-left:2em;">
-    <li>Guided visits to local markets and cultural sites</li>
-    <li>Nature walks and scenic viewpoints around Moyale</li>
-    <li>Exclusive tasting of local cuisine and coffee</li>
-    <li>Professional meeting and small-event hosting</li>
-  </ul>
-  <p>Our team can help craft a personalized itinerary that blends comfort, discovery, and cultural immersion.</p>
-</section>
+/* Sections */
+.section{padding: 40px 0}
+.section.alt{background: rgba(255,255,255,.03)}
+.section-title{margin-bottom: 16px}
+.section-title h2{margin:0; font-size:24px; letter-spacing:-.4px}
+.section-title p{margin:8px 0 0; max-width: 70ch}
 
-<!-- Gallery -->
-<section id="gallery" style="padding:3em 1em; background:#f9f9f9;">
-  <h2>Gallery</h2>
-  <p>A glimpse into the spaces, comfort, and experiences that define a stay at Latahzan Guest House.</p>
-  <div class="gallery">
-    <img src="images/IMG-20231129-WA0007.jpg" alt="Deluxe Room" />
-    <img src="images/IMG-20231129-WA0008.jpg" alt="Dining Area" />
-    <img src="images/IMG-20231129-WA0009.jpg" alt="Reception" />
-    <img src="images/view.JPG" alt="Moyale Views" />
-  </div>
-</section>
+.grid-3{display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:18px}
+.grid-2{display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:18px}
+.card{
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  padding: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.25);
+}
+.card h3{margin:0 0 8px; letter-spacing:-.25px}
+.card p{margin:0; color:var(--muted); line-height:1.55}
 
-<!-- Testimonials -->
-<section id="testimonials" style="padding:3em 1em;">
-  <h2>Guest Experiences</h2>
-  <div class="testimonials">
-    <div class="testimonial-card">
-      <p>★★★★★</p>
-      <p>“An exceptionally comfortable stay with outstanding attention to detail.”</p>
-    </div>
-    <div class="testimonial-card">
-      <p>★★★★☆</p>
-      <p>“A calm, elegant environment — ideal for business and extended stays.”</p>
-    </div>
-    <div class="testimonial-card">
-      <p>★★★★★</p>
-      <p>“Impeccable service, spotless rooms, and a truly relaxing atmosphere.”</p>
-    </div>
-  </div>
-</section>
+.list{margin:0; padding-left:18px; color:var(--muted); line-height:1.8}
 
-<!-- Contact -->
-<section id="contact" style="padding:3em 1em; max-width:900px; margin:auto;">
-  <h2>Reservations & Enquiries</h2>
-  <p>We would be delighted to welcome you. Contact us for reservations, personalized stays, or any inquiries.</p>
+/* Rooms */
+.room-card{padding:0; overflow:hidden}
+.room-img{height:190px; width:100%; object-fit:cover; border-bottom:1px solid rgba(255,255,255,.12)}
+.room-body{padding:16px}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px}
+.tag{
+  font-size:12px; color:var(--muted); font-weight:800;
+  padding:6px 10px; border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.18);
+  border-radius: 999px;
+}
+.room-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
 
-  <p><strong>Phone:</strong> 0743539690</p>
-  <p><strong>Email:</strong> latahzanguesthouse@gmail.com</p>
-  <p><strong>Address:</strong> Al-Huda Street, near Baraza Park, Moyale</p>
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 12px;
+}
+.gallery img{
+  width:100%;
+  height: 220px;
+  object-fit:cover;
+  border-radius: 18px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 10px 35px rgba(0,0,0,.20);
+}
 
-  <iframe
-    src="https://www.google.com/maps?q=Latahzan+Guest+House,+Moyale&output=embed"
-    width="100%"
-    height="300"
-    style="border:0; margin-top:1em;"
-    loading="lazy">
-  </iframe>
-</section>
+/* Reviews */
+.stars{letter-spacing:1px; margin-bottom:8px}
+.quote{margin:0; color:var(--muted); line-height:1.6}
 
-<footer style="text-align:center; padding:2em 1em;">
-  © 2025 Latahzan Guest House — Refined Stays & Experiences in Moyale.
-</footer>
+/* Map */
+.map{
+  width:100%;
+  height: 340px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius2);
+  overflow:hidden;
+  background: rgba(255,255,255,.05);
+}
 
-</body>
-</html>
+/* Footer */
+.footer{
+  padding: 28px 0 44px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: var(--muted);
+}
+.footer-row{
+  display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.footer-links{display:flex; gap:14px}
+.footer-links a{color:var(--muted); font-weight:800}
+.footer-links a:hover{color:var(--text)}
+
+/* Floating + sticky */
+.fab{
+  position:fixed; right:16px; bottom:16px; z-index:70;
+  display:flex; flex-direction:column; gap:10px;
+}
+.fab a{box-shadow: var(--shadow)}
+.sticky-book{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  display:none;
+  padding: 10px 0;
+  background: rgba(7,12,12,.85);
+  backdrop-filter: blur(12px);
+  border-top:1px solid rgba(255,255,255,.10);
+}
+.sticky-row{display:flex; gap:10px}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr}
+  .trust-strip{grid-template-columns: repeat(2, minmax(0, 1fr))}
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .gallery{grid-template-columns: repeat(2, minmax(0,1fr))}
+  .nav{display:none}
+  .sticky-book{display:block}
+}
