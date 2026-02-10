@@ -28,7 +28,10 @@ body{
 }
 
 a{color:inherit; text-decoration:none}
-img{max-width:100%; display:block}
+img:not(.nav-logo){
+  max-width:100%;
+  display:block;
+}
 
 .container{
   width:min(var(--max), calc(100% - 36px));
