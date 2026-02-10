@@ -1,3 +1,8 @@
+/* =========================
+   LATAHZAN GUEST HOUSE
+   CLEAN + FIXED CSS (Navbar logo fixed)
+   ========================= */
+
 :root{
   --bg1:#061010;
   --bg2:#070b0c;
@@ -5,7 +10,7 @@
   --muted:rgba(255,255,255,.72);
   --border:rgba(255,255,255,.14);
   --shadow:0 18px 50px rgba(0,0,0,.35);
-  --accent:#f4c430;
+  --accent:#d6b15e;
   --wa:#27c26a;
 
   --radius:22px;
@@ -16,19 +21,20 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
   margin:0;
   font-family:var(--font);
   color:var(--text);
   background:
-    radial-gradient(1200px 700px at 20% -10%, rgba(244,196,48,.20), transparent 60%),
+    radial-gradient(1200px 700px at 20% -10%, rgba(214,177,94,.22), transparent 60%),
     radial-gradient(900px 600px at 90% 10%, rgba(39,194,106,.10), transparent 55%),
     linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
   overflow-x:hidden;
 }
 
 a{color:inherit; text-decoration:none}
-img:not(.nav-logo){max-width:100%; display:block}
+img{max-width:100%; display:block}
 
 .container{
   width:min(var(--max), calc(100% - 36px));
@@ -52,9 +58,9 @@ img:not(.nav-logo){max-width:100%; display:block}
 }
 .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.09)}
 .btn.primary{
-  background:linear-gradient(180deg, var(--accent), #e2b426);
+  background:linear-gradient(180deg, var(--accent), #b98e37);
   border-color:transparent;
-  color:#14120a;
+  color:#12100a;
 }
 .btn.wa{
   background:linear-gradient(180deg, var(--wa), #1da85a);
@@ -63,7 +69,9 @@ img:not(.nav-logo){max-width:100%; display:block}
 }
 
 .pill{
-  display:inline-flex; align-items:center; gap:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
   padding:8px 12px;
   border-radius:999px;
   background:rgba(255,255,255,.06);
@@ -76,7 +84,9 @@ img:not(.nav-logo){max-width:100%; display:block}
 .muted{color:var(--muted)}
 .tiny{font-size:12px; line-height:1.4}
 
-/* Header */
+/* =========================
+   HEADER / NAVBAR (FIXED)
+   ========================= */
 .site-header{
   position:sticky;
   top:0;
@@ -85,35 +95,83 @@ img:not(.nav-logo){max-width:100%; display:block}
   background: linear-gradient(180deg, rgba(7,12,12,.75) 0%, rgba(7,12,12,.35) 100%);
   border-bottom:1px solid rgba(255,255,255,.10);
 }
+
 .header-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:14px;
+  padding:12px 0;
+  min-height:72px; /* keeps header stable */
+}
+
+/* Brand (logo + name) */
+.brand{
+  display:flex;
+  align-items:center;
   gap:12px;
-  padding:14px 0;
+  min-width:0;
+  font-weight:900;
+  letter-spacing:.2px;
 }
 
-.brand-mark{
-  width:38px; height:38px; border-radius:12px;
-  background:
-    radial-gradient(circle at 30% 25%, rgba(244,196,48,.85), transparent 55%),
-    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.2));
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow: var(--shadow);
+/* LOGO: stays small, never stretches, never breaks navbar */
+.brand .nav-logo{
+  width:56px;
+  height:56px;
+  max-width:56px;
+  max-height:56px;
+
+  object-fit:contain;  /* best for logos (no cropping) */
+  background:#fff;
+  padding:6px;
+
+  border-radius:14px; /* cleaner than circle for big logo */
+  display:block;
+  flex:0 0 auto;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
 }
-.nav{display:flex; gap:16px; align-items:center}
-.nav a{color:var(--muted); font-weight:800; font-size:14px}
+
+/* Brand name: never wraps into multiple lines */
+.brand-name{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:240px;
+  font-weight:900;
+}
+
+/* Navigation */
+.nav{
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+.nav a{
+  color:var(--muted);
+  font-weight:800;
+  font-size:14px;
+}
 .nav a:hover{color:var(--text)}
-.header-cta{display:flex; gap:10px}
 
-/* Hero */
+.header-cta{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* =========================
+   HERO
+   ========================= */
 .hero{padding:44px 0 26px}
+
 .hero-grid{
   display:grid;
   grid-template-columns: 1.12fr .88fr;
   gap:26px;
   align-items:stretch;
 }
+
 .hero-card{
   position:relative;
   border-radius: var(--radius2);
@@ -122,6 +180,7 @@ img:not(.nav-logo){max-width:100%; display:block}
   box-shadow: var(--shadow);
   min-height:460px;
 }
+
 .hero-img{
   position:absolute;
   inset:0;
@@ -130,27 +189,51 @@ img:not(.nav-logo){max-width:100%; display:block}
   object-fit:cover;
   filter:brightness(.75);
 }
+
 .hero-overlay{
-  position:absolute; inset:0;
+  position:absolute;
+  inset:0;
   background: linear-gradient(90deg, rgba(6,10,10,.82) 0%, rgba(6,10,10,.58) 45%, rgba(6,10,10,.22) 100%);
 }
+
 .hero-content{
   position:relative;
   z-index:2;
   padding:34px;
   max-width:680px;
 }
+
 h1{
   margin:12px 0 10px;
   font-size: clamp(30px, 4vw, 48px);
   line-height:1.06;
   letter-spacing:-.7px;
 }
-.lead{color:var(--muted); font-size:16px; line-height:1.55; max-width:56ch}
-.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px}
-.trust-mini{margin-top:18px; display:flex; flex-wrap:wrap; gap:12px}
 
-/* Booking */
+.lead{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.55;
+  max-width:56ch;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+
+.trust-mini{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* =========================
+   BOOKING
+   ========================= */
 .booking-card{
   border-radius: var(--radius2);
   border:1px solid rgba(255,255,255,.12);
@@ -158,13 +241,16 @@ h1{
   box-shadow: var(--shadow);
   padding:22px;
 }
+
 .booking-title{margin:0 0 8px; font-size:18px; letter-spacing:-.2px}
+
 .form{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:12px;
   margin-top:14px;
 }
+
 .field label{
   display:block;
   font-size:12px;
@@ -172,6 +258,7 @@ h1{
   margin:0 0 6px;
   font-weight:900;
 }
+
 .field input, .field select, .field textarea{
   width:100%;
   padding:12px;
@@ -182,6 +269,7 @@ h1{
   outline:none;
 }
 .field textarea{min-height:92px; resize:vertical}
+
 .full{grid-column:1/-1}
 .actions{display:flex; gap:10px; flex-wrap:wrap}
 
@@ -203,9 +291,12 @@ h1{
   text-align:center;
 }
 
-/* Sections */
+/* =========================
+   SECTIONS / CARDS / GRIDS
+   ========================= */
 .section{padding:40px 0}
 .section.alt{background: rgba(255,255,255,.03)}
+
 .section-title{margin-bottom:16px}
 .section-title h2{margin:0; font-size:24px; letter-spacing:-.4px}
 .section-title p{margin:8px 0 0; max-width:70ch}
@@ -233,6 +324,7 @@ h1{
   border-bottom:1px solid rgba(255,255,255,.12);
 }
 .room-body{padding:16px}
+
 .tags{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px}
 .tag{
   font-size:12px;
@@ -243,36 +335,9 @@ h1{
   background: rgba(0,0,0,.18);
   border-radius:999px;
 }
+
 .room-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
 
-.price-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  align-items:baseline;
-  margin:10px 0 12px;
-}
-.price-label{
-  color:rgba(255,255,255,.72);
-  font-weight:900;
-  font-size:12px;
-  letter-spacing:.2px;
-  text-transform:uppercase;
-}
-.price-value{
-  font-weight:950;
-  font-size:20px;
-  letter-spacing:-.3px;
-  color:rgba(255,255,255,.92);
-}
-.price-note{
-  color:rgba(255,255,255,.65);
-  font-weight:800;
-  font-size:12px;
-}
-
-
-/* Prices (fixed for dark cards) */
 .price-row{
   display:flex;
   flex-wrap:wrap;
@@ -369,140 +434,29 @@ h1{
 }
 .sticky-row{display:flex; gap:10px}
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 980px){
   .hero-grid{grid-template-columns:1fr}
   .trust-strip{grid-template-columns: repeat(2, minmax(0, 1fr))}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
   .gallery{grid-template-columns: repeat(2, minmax(0,1fr))}
+
   .nav{display:none}
   .sticky-book{display:block}
-}
 
-/* ===== NAV LOGO FIX (prevents huge header) ===== */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width: 0;
-}
-
-.nav-logo{
-  height:42px;          /* perfect size */
-  width:42px;           /* force square */
-  object-fit:cover;     /* crop correctly */
-  border-radius:50%;
-  background:#fff;
-  padding:4px;
-  flex:0 0 auto;        /* never stretch */
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
-}
-
-/* Keep the header height clean */
-.site-header .header-row{
-  padding:12px 0;       /* slightly tighter */
-}
-
-/* Make brand text not wrap into 3 lines */
-.brand-name{
-  font-weight:900;
-  white-space:nowrap;   /* stops breaking into lines */
-  overflow:hidden;
-  text-overflow:ellipsis;
-  max-width:220px;
-}
-
-
-/* ===== NAVBAR LOGO (FORCE FIX) ===== */
-header.site-header a.brand > img.nav-logo{
-  width: 42px !important;
-  height: 42px !important;
-  max-width: 42px !important;
-  max-height: 42px !important;
-
-  object-fit: cover !important;
-  border-radius: 50% !important;
-
-  background: #fff !important;
-  padding: 4px !important;
-
-  display: block !important;
-  flex: 0 0 auto !important;
-}
-
-/* Keep header clean */
-header.site-header .header-row{
-  min-height: 64px;
-  align-items: center;
-}
-
-
-/* ===== HEADER / NAVBAR (CLEAN) ===== */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(14px);
-  background: linear-gradient(180deg, rgba(7,12,12,.75) 0%, rgba(7,12,12,.35) 100%);
-  border-bottom: 1px solid rgba(255,255,255,.10);
-}
-
-.header-row{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 12px 0;
-  min-height: 72px; /* keeps header stable */
-}
-
-/* brand */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width: 0;
-}
-
-/* logo */
-.brand .nav-logo{
-  width: 56px;
-  height: 56px;
-  max-width: 56px;
-  max-height: 56px;
-  object-fit: contain;     /* important: DON'T crop logos */
-  background: #fff;
-  padding: 6px;
-  border-radius: 14px;     /* better than circle for big logo */
-  display:block;
-  flex: 0 0 auto;
-}
-
-/* brand text */
-.brand-name{
-  font-weight: 900;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 220px;
-}
-
-/* nav + buttons */
-.nav{display:flex; gap:16px; align-items:center}
-.header-cta{display:flex; gap:10px; align-items:center}
-
-/* mobile */
-@media (max-width: 980px){
-  .nav{display:none}
+  /* Navbar logo smaller on mobile */
   .brand .nav-logo{
-    width: 46px;
-    height: 46px;
-    max-width: 46px;
-    max-height: 46px;
-    padding: 5px;
-    border-radius: 12px;
+    width:46px;
+    height:46px;
+    max-width:46px;
+    max-height:46px;
+    padding:5px;
+    border-radius:12px;
   }
-  .brand-name{max-width: 160px;}
+  .brand-name{max-width:160px;}
 }
+
 
