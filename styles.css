@@ -92,24 +92,36 @@ img{max-width:100%; display:block}
   gap:12px;
   padding:14px 0;
 }
-.brand{
-  display:flex; align-items:center; gap:10px;
-  font-weight:900; letter-spacing:.2px;
-}
 
-.nav-logo{
-  height:42px;
-  width:auto;
-  border-radius:50%;
-  background:#fff;
-  padding:4px;
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
-}
-
+/* NAVBAR LOGO FIX */
 .brand{
   display:flex;
   align-items:center;
   gap:12px;
+  font-weight:900;
+  letter-spacing:.2px;
+}
+
+.nav-logo{
+  height:42px;              /* perfect navbar height */
+  width:auto;
+  border-radius:50%;
+  background:#fff;          /* keeps logo clean on dark bg */
+  padding:4px;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+}
+
+/* Mobile tweak */
+@media (max-width: 980px){
+  .nav-logo{
+    height:36px;
+  }
+}
+
+
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:900; letter-spacing:.2px;
 }
 
 .brand-mark{
