@@ -458,3 +458,9 @@ h1{
   flex-shrink: 0 !important;
   display: inline-block !important;
 }
+
+.site-header .header-row{
+  min-height: 64px;
+  align-items: center;
+}
+
