@@ -224,3 +224,47 @@ footer {
   font-weight:800;
   font-size:12px;
 }
+
+
+/* ===== FIX: Stop desktop view from looking like mobile ===== */
+html, body {
+  width: 100%;
+  max-width: none !important;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+.site-header,
+.hero,
+.section,
+.footer,
+main,
+header,
+nav {
+  width: 100%;
+  max-width: none !important;
+}
+
+/* Make your content container actually use desktop width */
+.container {
+  width: min(1160px, calc(100% - 36px)) !important;
+  max-width: 1160px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure grids don’t collapse on desktop */
+.hero-grid {
+  grid-template-columns: 1.12fr .88fr;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gallery {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
